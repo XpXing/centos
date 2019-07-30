@@ -29,6 +29,23 @@ centex(){
         "|sudo fdisk /dev/sda ; sudo partprobe ; sudo xfs_growfs / ; sudo df -hT
 }
 
+suseex(){
+        sudo df -hT
+        echo "Fix
+        "|sudo parted -l
+        echo "d
+        
+        n
+        p
+        
+        
+        
+        N
+        w
+        q
+        "|sudo fdisk /dev/sda ; sudo xfs_growfs / ; sudo df -hT
+}
+
 clear
 function menu()
 {
@@ -39,7 +56,8 @@ cat << EOF
 =======================================
 1.阅读须知(第一次或不知道本脚本做什么的请先阅读)
 2.开始扩展
-3.退出脚本
+3.centos扩展
+4.suse扩展
 EOF
 
 read -p "输入选项：" choice
@@ -51,6 +69,9 @@ case $choice in
         centex
         ;;
         3)
+        suseex
+        ;;
+        4)
         exit
         ;;
         *)
