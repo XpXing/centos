@@ -36,7 +36,6 @@ suseex(){
         echo "d
         
         n
-        p
         
         
         
