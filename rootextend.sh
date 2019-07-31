@@ -1,12 +1,12 @@
 #!/bin/bash
-#System Required: CentOS 7+
-#Vision 1.1 update on 7/30/2019
+#System Required: CentOS 7+ SUSE ENTERPRISE 15
+#Vision 1.2 update on 7/30/2019
 
 xuzhi(){
         echo "须知如下
-1.本脚本目前适用于Azure下创建的Centos7虚拟机的根目录扩展
-  在扩展之前请先确定执行过关机后的扩展磁盘
-2.如果是在其他的centos7下(比如虚拟机环境)使用该脚本，请确定分区情况，其他一律不适用
+1.本脚本目前适用于Azure下创建的Centos7或者是SUSE ENTERPRISE 15虚拟机的根目录扩展
+  在扩展之前请先确定执行过关机后的扩展磁盘 suse在执行前一定先运行sudo parted -l输入Fix
+2.如果是在其他的环境(比如虚拟机)使用该脚本，请确定分区情况，其他一律不适用
  1）本脚本只适用于标准分区
  2）请确定根目录挂载是该硬盘最后的一个分区
 3.这是一个菜鸟写出来的第一个脚本，有错误请立即联系作者 作者邮箱942308242@qq.com
@@ -31,8 +31,6 @@ centex(){
 
 suseex(){
         sudo df -hT
-        echo "fix
-        "|sudo parted -l
         echo "d
         
         n
@@ -54,8 +52,8 @@ cat << EOF
 |           Made by Xp_Xing           |
 =======================================
 1.阅读须知(第一次或不知道本脚本做什么的请先阅读)
-2.centos扩展
-3.suse扩展
+2.centos7扩展
+3.suse15扩展(请先确保之前运行了sudo parted -l的修复)
 4.退出脚本
 EOF
 
