@@ -31,7 +31,7 @@ centex(){
 
 suseex(){
         sudo df -hT
-        echo "Fix
+        echo "fix
         "|sudo parted -l
         echo "d
         
@@ -39,7 +39,7 @@ suseex(){
         
         
         
-        N
+        
         w
         q
         "|sudo fdisk /dev/sda ; sudo xfs_growfs / ; sudo df -hT
