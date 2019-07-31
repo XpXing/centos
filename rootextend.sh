@@ -55,9 +55,9 @@ cat << EOF
 |           Made by Xp_Xing           |
 =======================================
 1.阅读须知(第一次或不知道本脚本做什么的请先阅读)
-2.开始扩展
-3.centos扩展
-4.suse扩展
+2.centos扩展
+3.suse扩展
+4.退出脚本
 EOF
 
 read -p "输入选项：" choice
@@ -76,7 +76,7 @@ case $choice in
         ;;
         *)
         clear
-        echo -e "输入有误，请输入正确数字 [0-3]"
+        echo -e "输入有误，请输入正确数字 [0-4]"
         sleep 1s
         menu
         ;;
