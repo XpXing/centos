@@ -71,6 +71,9 @@ case $choice in
         4)
         exit
         ;;
+        q)
+        exit
+        ;;
         *)
         clear
         echo -e "输入有误，请输入正确数字 [0-4]"
