@@ -16,13 +16,12 @@ xuzhi(){
 }
 
 disk(){
-       rootsize=$(sudo df -hT /dev/sda2|sed -n '2p'|cut -c22-25)
-       availsize=$(sudo df -hT /dev/sda2|sed -n '2p'|cut -c34-38)
-       echo "你当前的根目录大小是$rootsize,可用大小为$availsize"
+        rootsize=$(sudo df -hT /dev/sda2|sed -n '2p'|cut -c22-25)
+        availsize=$(sudo df -hT /dev/sda2|sed -n '2p'|cut -c34-38)
+        echo "你当前的根目录大小是$rootsize,可用大小为$availsize"
 }
 
 centex(){
-        $disk
         echo "d
         
         n
@@ -32,7 +31,7 @@ centex(){
         
         w
         q
-        "|sudo fdisk /dev/sda ; sudo partprobe ; sudo xfs_growfs / ; $disk
+        "|sudo fdisk /dev/sda ; sudo partprobe ; sudo xfs_growfs / ;
 }
 
 clear
@@ -54,7 +53,7 @@ case $choice in
         xuzhi
         ;;
         2)
-        centex
+        disk && centex && disk
         ;;
         3)
         exit
